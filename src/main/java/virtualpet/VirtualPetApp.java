@@ -8,20 +8,12 @@ public class VirtualPetApp {
 	
 		Scanner input = new Scanner(System.in);
 		
-		//create the pet as an  object / class / that has a method (?)
 		VirtualPet steve = new VirtualPet();
 		
+		System.out.println("Say hello to Steve the Sloth!");
 		
-		//say hello, start program
-		//game loop
-		//while pet is alive, this loop happens.
-		//every time this loop happens, you get a chance to interact. This is one cycle.
-		//print a menu every loop, and give options. 
-		//user input. Do something.
-		//virtual-pet.tick() is called to represent the passage of time. 
-	
 		while ((steve.hunger < 20) && (steve.thirst < 20) && (steve.boredom < 20)) {
-			System.out.println("Say hello to Steve the Sloth!");
+			
 			System.out.println("Hunger: " + steve.hunger);
 			System.out.println("Thirst: " + steve.thirst);
 			System.out.println("Boredom: " + steve.boredom);
@@ -30,38 +22,29 @@ public class VirtualPetApp {
 			System.out.println("1. Feed Steve");
 			System.out.println("2. Water Steve");
 			System.out.println("3. Climb around with Steve");
+			System.out.println("4. Leave Steve alone.");
 			
 			int menuSelection = input.nextInt();
 			
 			switch(menuSelection) {
-			  case 1:
-			    steve.feed();
+				case 1:
+					steve.feed();
 			    break;
-			  case 2:
-			    steve.water();
+				case 2:
+					steve.water();
 			    break;
-			  case 3: 
-				steve.play();
+				case 3: 
+					steve.play();
+				break;
+				case 4:
+					steve.chill();
+				break;
 			  default:   
 			}
 			steve.tick();
 		}
-		System.out.println("Steve has died.");
-	
-
-		
-		
-		
-		
-		
-		
+		System.out.println("Steve has died. You should have taken better care of him. You're a monster. ");
 	
 	}
 }
 
-
-//VirtualPetApp class
-//Create a main method that…
-//implements a game loop.
-//asks for user input.
-//writes output to the console.
